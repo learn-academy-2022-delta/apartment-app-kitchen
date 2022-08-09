@@ -1,6 +1,6 @@
 
 user1 = User.where(email: 'jorge@testing.com').first_or_create(password: 'jorgeeats', password_confirmation: 'jorgeeats')
-user2 = User.where( email: 'george@testing.com').create(password: 'georgeeats', password_confirmation: 'georgeeats')
+user2 = User.where( email: 'george@testing.com').first_or_create(password: 'georgeeats', password_confirmation: 'georgeeats')
 
  
 apartments1 = [
