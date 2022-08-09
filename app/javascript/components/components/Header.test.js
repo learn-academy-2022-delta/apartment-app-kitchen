@@ -14,9 +14,9 @@ import Header from './Header'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("When Header renders", () => {
-  it("displays a heading", () => {
+  it("it display all apartments when user is logged in", () => {
     const header = shallow(<Header />)
     const headerHeading = header.find("h1")
-    expect(headerHeading.text()).toEqual("This should fail")
+    expect(headerHeading.text()).toEqual("All Apartments")
   })
 })
