@@ -1,6 +1,6 @@
 
-user = User.where(email: 'jorge@testing.com').first_or_create(password: 'jorgeeats', password_confirmation: 'jorgeeats')
-user2 = User.create( email: 'george@testing.com',password: 'georgeeats', password_confirmation: 'georgeeats')
+user1 = User.where(email: 'jorge@testing.com').first_or_create(password: 'jorgeeats', password_confirmation: 'jorgeeats')
+user2 = User.where( email: 'george@testing.com').create(password: 'georgeeats', password_confirmation: 'georgeeats')
 
  
 apartments1 = [
@@ -31,7 +31,7 @@ apartments1 = [
 ]
   
 apartments2 = [
-{
+  {
     street: '978 Highwater Ct',
     city: 'San Diego',
     state: 'CA',
@@ -43,12 +43,10 @@ apartments2 = [
     pets: 'Dogs Ok',
     image: 'image.png'
   }
- 
 ]
 
-
 apartments1.each do |each_apartment|
-  user.apartments.create each_apartment
+  user1.apartments.create each_apartment
   puts "creating apartment #{each_apartment}"
 end
 
