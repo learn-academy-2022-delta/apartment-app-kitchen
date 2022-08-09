@@ -1,3 +1,9 @@
+// link to home
+// link to all apartments
+// link to my apartments
+// link to add apartment
+
+
 import React, { Component } from 'react'
 import { Nav, NavItem } from 'reactstrap'
 
@@ -14,7 +20,7 @@ class Header extends Component {
     console.log("current_user:", current_user)
     return (
       <>
-        <h1>React in Rails with Devise</h1>
+        <h1>All Apartments</h1>
         <Nav>
           {logged_in &&
             <NavItem>
@@ -32,8 +38,46 @@ class Header extends Component {
             </NavItem>
           }
         </Nav>
+
+        <Nav>
+          {logged_in &&
+            <NavItem>
+              <a href={`/users/${current_user.id}`} className="nav-link">My Apartments</a>
+            </NavItem>
+          }
+          {!logged_in &&
+            <NavItem>
+              <a href="/apartments" className="nav-link">All Apartments</a>
+            </NavItem>
+          }
+          {logged_in &&
+            <NavItem>
+              <a href="/apartmentnew" className="nav-link">Add Apartment</a>
+            </NavItem>
+          }
+        </Nav>
+
+        <Nav>
+          {logged_in &&
+            <NavItem>
+              <a href={`/users/${current_user.id}`} className="nav-link">My Apartments</a>
+            </NavItem>
+          }
+          {!logged_in &&
+            <NavItem>
+              <a href="/" className="nav-link">Home</a>
+            </NavItem>
+          }
+          {logged_in &&
+            <NavItem>
+              <a href="/" className="nav-link">Home</a>
+            </NavItem>
+          }
+        </Nav>
       </>
     )
   }
 }
+
+
 export default Header
