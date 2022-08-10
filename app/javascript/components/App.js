@@ -32,6 +32,19 @@ class App extends Component {
       .catch(error => console.log(error))
     }
 
+    updateApartment = async (form, id) => {
+      fetch (`/apartments/${id}`, {
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'PUT'
+      })
+      .then(response => response.json())
+      .then(apartments => this.setState({ apartments }))
+      .catch(error => console.log(error))
+    }
+
 
   render() {
     return (
