@@ -3,10 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { CardGroup, CardImg } from 'reactstrap'
 import { Button, Card, CardBody, CardTitle, CardText, Container } from 'reactstrap'
 
-// fetch call for all apartments
-// refactor route to dynamically pass all apartments
-// render list of cards with each apartment displaying information for price, location, bath, bed and image
-
 export default class ApartmentIndex extends Component {
   render() {
     return (
