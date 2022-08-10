@@ -2,27 +2,57 @@ import React, { Component } from 'react';
 import Home from './Home'
 
 class Home extends Component {
-  // constructor(props) {
-  //   super(props); 
-  //   this.state = {
-
-  //   }
-  // }
+ 
   render() {
     return (
       <>
-        <div style={{display:'flex', justifyContent:'center'}}>
-        <h2>Welcome to Apartment Hunter</h2>
+        <div className="home-text">
+          <h2
+            style={{
+              display:'flex', 
+              justifyContent:'center', 
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bolder",
+              fontSize: "60px",
+              fontFamily: "Arial"
+            }}
+          >
+            Welcome to Apartment Hunter
+          </h2>
+          <p
+            style={{
+              display:'flex', 
+              justifyContent:'center', 
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "20px",
+              fontFamily: "Arial",
+            }}
+          >
+            Find your new home today!
+          </p>
         </div>
-        <br></br>
-        <div style={{display:'flex', justifyContent:'center'}}>
-        <p>Find your new home today!</p>
-        <br></br>
-        <Button color="primary">Sign-In</Button>
-        <Button color="primary">Sign-Up</Button>
+          <br></br>
+        <div className="home-buttons">
+          <Button 
+            style={{
+              color: "primary"
+            }}
+          >
+            Sign-In
+          </Button>
+          <Button 
+            style={{
+              color: "primary"
+            }}
+         >
+            Sign-Up
+          </Button>
         </div>
       </>
-    )
+    );
   }
 }
 
