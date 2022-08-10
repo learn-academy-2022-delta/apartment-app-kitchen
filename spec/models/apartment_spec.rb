@@ -2,16 +2,27 @@ require 'rails_helper'
 # Models apartment spec
 
 RSpec.describe Apartment, type: :model do
-  it "should validate bedrooms" do
-    apartment = Apartment.create
-    expect(apartment.errors[:bedrooms]).to_not be_empty
+  user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+
+  it 'can create an apartment' do
+
+    user.apartments.create(
+      street: "string",
+      city: "string",
+      state: "string",
+      manager: "string",
+      email: "string", 
+      price: "string", 
+      bedrooms: 3, 
+      bathrooms: 3, 
+      pets: "string",
+      image: "www.urlhelper.com"
+    )
+    apartment = Apartment.all
+    expect(apartment.length).to eq 1
   end
-  it "should validate bathrooms" do
-    apartment = Apartment.create
-    expect(apartment.errors[:bathrooms]).to_not be_empty
-  end
-  it 'cannot create an apartment with empty street' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without street' do
+    apartment = user.apartments.create(
       {
         city: 'Los Angeles',
         state: 'CA',
@@ -26,8 +37,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:street]).to_not be_empty
   end
-  it 'cannot create an apartment with empty city' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without city' do
+  apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         state: 'CA',
@@ -42,8 +53,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:city]).to_not be_empty
   end
-  it 'cannot create an apartment with empty state' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without state' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -58,8 +69,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:state]).to_not be_empty
   end
-  it 'cannot create an apartment with empty manager' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without manager' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -74,8 +85,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:manager]).to_not be_empty
   end
-  it 'cannot create an apartment with empty email' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without email' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -90,8 +101,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:email]).to_not be_empty
   end
-  it 'cannot create an apartment with empty price' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without price' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -106,8 +117,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:price]).to_not be_empty
   end
-  it 'cannot create an apartment with empty bedrooms' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without bedrooms' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -122,8 +133,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:bedrooms]).to_not be_empty
   end
-  it 'cannot create an apartment with empty bathrooms' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without bathrooms' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -138,8 +149,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:bathrooms]).to_not be_empty
   end
-  it 'cannot create an apartment with empty pets' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without pets' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -154,8 +165,8 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:pets]).to_not be_empty
   end
-  it 'cannot create an apartment with empty image' do
-    apartment = Apartment.create(
+  it 'user cannot create an apartment without image' do
+    apartment = user.apartments.create(
       {
         street: '1329 Carroll Avenue',
         city: 'Los Angeles',
@@ -170,4 +181,5 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:image]).to_not be_empty
   end
+
 end
