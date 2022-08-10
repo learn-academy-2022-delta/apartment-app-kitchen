@@ -32,7 +32,7 @@ export default class ApartmentEdit extends Component {
       this.setState({ success: true })
 
   
-    render() {
+    render() 
       return (
         <>
         <h3>Edit your Apartment Here</h3>
@@ -140,4 +140,3 @@ export default class ApartmentEdit extends Component {
       )
     }
   }
-}
