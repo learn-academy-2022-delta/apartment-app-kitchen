@@ -4,7 +4,8 @@ export default class NotFound extends Component {
   render() {
     return (
       <div>
-        <h3>This should fail</h3>
+        <h1>404</h1>
+        <h3>Not Found</h3>
       </div>
     ) 
   } 
