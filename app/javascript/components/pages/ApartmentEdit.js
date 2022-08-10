@@ -135,7 +135,6 @@ export default class ApartmentEdit extends Component {
           </Button>
 
         </Form>
-        {this.state.success && <p>Apartment updated successfully</p>}
         </>
       )
     }
