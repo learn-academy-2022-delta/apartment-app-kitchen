@@ -14,3 +14,62 @@
  *= require_self
  */
 @import 'bootstrap';
+
+
+/* ---SHOW PAGE STYLE: Basic Template--- */
+
+.show-header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center; 
+  }
+
+  .show-overview {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center; 
+  }
+
+  .apartment {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center; 
+  }
+
+  .info-card {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    margin: 3rem;
+    height: 110vh;
+    color: white; 
+  }
+
+  .info-title {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center; 
+  }
+
+  .return-button {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center; 
+  }
