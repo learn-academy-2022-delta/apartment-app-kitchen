@@ -21,13 +21,11 @@ describe("When ApartmentIndex renders", () => {
   )
     
   it("displays a heading", () => {
-    const apartmentIndex = shallow(<ApartmentIndex />)
     const apartmentIndexHeading = apartmentIndex.find("h2")
     expect(apartmentIndexHeading.text()).toEqual("Browse all apartments")
   })
 
   it("displays a paragraph", () => {
-    const apartmentIndex = shallow(<ApartmentIndex />)
     const apartmentIndexParagraph = apartmentIndex.find("p")
     expect(apartmentIndexParagraph.text()).toEqual("Also you can list your own apartment for rent!")
   }
