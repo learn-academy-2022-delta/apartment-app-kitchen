@@ -26,7 +26,7 @@ class App extends Component {
     }
 
     getApartments = async () => {
-      fetch('http://localhost:3000/apartments')
+      fetch('/apartments')
       .then(response => response.json())
       .then(apartments => this.setState({ apartments }))
       .catch(error => console.log(error))
@@ -45,6 +45,7 @@ class App extends Component {
             <Route path="/apartmentshow" component={ApartmentShow} />
             <Route path="/apartmentnew" component={ApartmentNew} />
             <Route path="/apartmentedit" component={ApartmentEdit} />
+            <Route path="/apartmentedit" render = {(props) => <ApartmentEdit {...props} apartments={this.state.apartments} />} />
             <Route component={NotFound}/>
           </Switch>
         </Router>
