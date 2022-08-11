@@ -28,7 +28,6 @@ class ApartmentShow extends Component {
               <Card className="info-card" body>
                 <CardTitle className="info-title">
                   <h5>Street Address:</h5>
-                  <p>{ apartment.street }</p>
                   <p>{ apartment.city }, { apartment.state }</p>
                   <h5>Manager name:</h5><p>{ apartment.manager }</p>
                   <h5>Manager email:</h5><p>{ apartment.email }</p>

@@ -45,6 +45,27 @@ class App extends Component {
     .then(() => this.readApartment())
     .catch(errors => console.log("New Apartment Error", errors))
   }
+    updateApartment = (editapartment, id) => {
+      fetch(`/apartments/${id}`, {
+        body: JSON.stringify(editapartment),
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(apartment => {
+        this.setState({
+          apartments: this.state.apartments.map(apartment => {
+            if (apartment.id === id) {
+              return apartment = editapartment
+            } else {
+              return apartment
+            }
+          })
+        })
+      })
+      .catch(error => console.log(error))
 
   render() {
     const {
@@ -67,11 +88,15 @@ class App extends Component {
           <Route path="/apartmentshow" component={ApartmentShow} />
           <Route path ='/apartmentnew' render={() => <ApartmentNew createApartment={this.createApartment} current_user = {this.props.current_user}/>
             }/>
-          <Route path="/apartmentedit" component={ApartmentEdit} />
+          <Route path="/apartmentedit/:id" render={(props) => {
+            let id = +props.match.params.id
+            let apartment = this.state.apartments.find(apartment => apartment.id === id)
+            return <ApartmentEdit {...props} apartment={apartment} />
+          }
+          } />
           <Route component={NotFound}/>
         </Switch>
       </Router>
-
     )
   }
 }
