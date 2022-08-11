@@ -14,6 +14,6 @@ describe("When NotFound renders", () => {
     expect(notFoundHeading.text()).toEqual("Not Found")
   })
 })
-export default NotFound
+
  
 
