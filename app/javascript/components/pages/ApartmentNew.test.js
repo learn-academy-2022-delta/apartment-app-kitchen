@@ -14,9 +14,20 @@ import ApartmentNew from './ApartmentNew'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("When ApartmentNew renders", () => {
+  let renderedApartmentNew;
+  let props = {current_user: {id: 1}}
+
+  beforeEach(() => {
+    renderedApartmentNew = shallow(<ApartmentNew {...props} />)
+  })
+
   it("displays a heading", () => {
-    const apartmentNew = shallow(<ApartmentNew />)
-    const apartmentNewHeading = apartmentNew.find("h3")
-    expect(apartmentNewHeading.text()).toEqual("This Should Fail")
+    const apartmentNewHeading = renderedApartmentNew.find("h3")
+    expect(apartmentNewHeading.text()).toEqual("ApartmentNew")
+  })
+
+  it("displays 10 form groups", () => {
+    const apartmentNewFormGroups = renderedApartmentNew.find("FormGroup")
+    expect(apartmentNewFormGroups.length).toEqual(10)
   })
 })
