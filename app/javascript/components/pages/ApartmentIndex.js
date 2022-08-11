@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CardGroup, CardImg } from 'reactstrap'
-import { Button, Card, CardBody, CardTitle, CardText, Container } from 'reactstrap'
+import { Button, Card, CardBody, CardTitle, CardText, Container,Col } from 'reactstrap'
 
 export default class ApartmentIndex extends Component {
   render() {
