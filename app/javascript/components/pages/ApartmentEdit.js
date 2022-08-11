@@ -18,7 +18,7 @@ export default class ApartmentEdit extends Component {
               bathrooms: 0,
               pets: '',
             },
-          submitted: false,
+          success : false
         }
     }
 
