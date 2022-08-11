@@ -181,5 +181,4 @@ RSpec.describe Apartment, type: :model do
     )
     expect(apartment.errors[:image]).to_not be_empty
   end
-
 end
