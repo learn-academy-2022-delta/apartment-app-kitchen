@@ -15,13 +15,13 @@ import {
 } from 'react-router-dom'
 
 class App extends Component {
-  constructor (props){
+  constructor(props){
+    super(props)
     this.state = {
-      apartments: []
-    }
+      apartments: [],
   }
-  
-  componentDidMount() {
+}
+ componentDidMount() {
     this.readApartment()
     console.log(this.state)
   }
@@ -31,6 +31,19 @@ class App extends Component {
       .then(response => response.json())
       .then(apartments => this.setState({ apartments }))
       .catch(error => console.log(error))
+  }
+  
+  createApartment = (newApartment) => {
+    fetch("/apartments", {
+      body: JSON.stringify(newApartment),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(() => this.readApartment())
+    .catch(errors => console.log("New Apartment Error", errors))
   }
 
   render() {
@@ -52,11 +65,13 @@ class App extends Component {
             let myListings = this.state.apartments.filter(apartment => apartment.user_id === current_user.id)
             return (<ProtectedApartmentIndex apartments={myListings}/>)}}/>
           <Route path="/apartmentshow" component={ApartmentShow} />
-          <Route path="/apartmentnew" component={ApartmentNew} />
+          <Route path ='/apartmentnew' render={() => <ApartmentNew createApartment={this.createApartment} current_user = {this.props.current_user}/>
+            }/>
           <Route path="/apartmentedit" component={ApartmentEdit} />
           <Route component={NotFound}/>
         </Switch>
       </Router>
+
     )
   }
 }
