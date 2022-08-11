@@ -37,26 +37,25 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.apartments)
     return (
-      
-        <Router>
-          <Header {...this.props} />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/apartmentindex" component={ApartmentIndex} />
-            <Route path="/apartmentshow" component={ApartmentShow} />
-              <Route path ='/apartmentnew' render={() => <ApartmentNew createApartment={this.createApartment} current_user = {this.props.current_user}/>
-              }/>
-            <Route path="/apartmentedit" component={ApartmentEdit} />
-            <Route component={NotFound}/>
-          </Switch>
-        </Router>
-        
-        
-  
-    )
-  }
+      <Router>
+        <Header {...this.props} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/apartmentindex" component={ApartmentIndex} />
+          <Route path="/apartmentshow" component={ApartmentShow} />
+            <Route path ='/apartmentnew' render={() => <ApartmentNew createApartment={this.createApartment} current_user = {this.props.current_user}/>
+            }/>
+          <Route path="/apartmentedit" component={ApartmentEdit} />
+          <Route component={NotFound}/>
+        </Switch>
+      </Router>
+  )
+}
 }
 
 export default App
+      
+        
+        
+  
