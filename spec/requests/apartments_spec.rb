@@ -30,3 +30,29 @@ RSpec.describe "Apartments", type: :request do
     end
   end
 end
+
+RSpec.describe "Apartments", type: :request do
+  describe "GET /index" do
+    it "returns a list of apartments" do
+      user = User.where(email: 'test@test.test').first_or_create(password: '12345678', password_confirmation: '12345678')
+
+      user.apartments.create(
+        street: '39169 Anchor Bay Drive',
+        city: 'San Diego',
+        state: 'CA',
+        manager: 'Rachel Greene',
+        email: 'randomapartment@yahoo.com',
+        price: '$2,500',
+        bedrooms: 2,
+        bathrooms: 1,
+        pets: 'Yes',
+        image: 'https://www.aveliving.com/AVE/media/Property_Images/Florham%20Park/hero/flor-apt-living-(2)-hero.jpg?ext=.jpg'
+
+        get '/apartments'
+        apartment = JSON.parse(response.body)
+        expect(response).to have_http_status(200)
+        expect(apartment.length).to eq 1
+      end
+    end
+  end
+end

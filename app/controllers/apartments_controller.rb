@@ -1,5 +1,10 @@
 class ApartmentsController < ApplicationController
 
+    def index
+        apartments = Apartment.all
+        render json: apartments
+    end
+    
     def create
         apartment = Apartment.create(apartment_params)
         if apartment.valid?
@@ -15,3 +20,5 @@ class ApartmentsController < ApplicationController
     end
 
 end
+
+
