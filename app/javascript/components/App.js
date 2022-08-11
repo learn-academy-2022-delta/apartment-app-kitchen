@@ -27,10 +27,10 @@ class App extends Component {
   }
 
   readApartment = () => {
-    fetch("http://localhost:3000/apartments")
-    .then(response => response.json())
-    .then(payload => this.setState({apartments: payload}))
-    .catch(errors => console.log(errors))
+      fetch('http://localhost:3000/apartments')
+      .then(response => response.json())
+      .then(apartments => this.setState({ apartments }))
+      .catch(error => console.log(error))
   }
 
   render() {
@@ -47,7 +47,7 @@ class App extends Component {
         <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/apartmentindex" component={ApartmentIndex} />
+          <Route path="/apartmentindex" render = {(props) => <ApartmentIndex {...props} apartments={this.state.apartments} />}/>
           <Route path="/mylistings" render={(props) => {
             let myListings = this.state.apartments.filter(apartment => apartment.user_id === current_user.id)
             return (<ProtectedApartmentIndex apartments={myListings}/>)}}/>
