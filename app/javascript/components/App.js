@@ -67,10 +67,16 @@ class App extends Component {
             <Route path="/apartmentindex" render = {(props) => <ApartmentIndex {...props} apartments={this.state.apartments} />} />
             <Route path="/apartmentshow" component={ApartmentShow} />
             <Route path="/apartmentnew" component={ApartmentNew} />
-            <Route path="/apartmentedit" render = {(props) => {
+            {/* <Route path="/apartmentedit/:id" render = {(props) => {
               const { match } = props
               const { id } = match.params
               return <ApartmentEdit {...props} apartment={this.state.apartments.find(apartment => apartment.id === id)} />
+            }
+            } /> */}
+            <Route path="/apartmentedit/:id" render={(props) => {
+              let id = props.match.params.id
+              let apartment = this.state.apartments.find(apartment => apartment.id === id)
+              return <ApartmentEdit {...props} apartment={apartment} />
             }
             } />
             <Route component={NotFound}/>
