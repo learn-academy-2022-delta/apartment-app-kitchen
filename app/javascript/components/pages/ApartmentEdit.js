@@ -133,6 +133,8 @@ export default class ApartmentEdit extends Component {
             onClick={this.handleSubmit}>
             Submit Changes
           </Button>
+         
+          {this.state.success && <Redirect to={'/apartments/${this.props.apartment.id}'} />}
 
         </Form>
         </>
