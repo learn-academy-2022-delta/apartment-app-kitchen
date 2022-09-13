@@ -64,8 +64,4 @@ class ApartmentShow extends Component {
   }
 }
 
-
-
-
-
 export default ApartmentShow

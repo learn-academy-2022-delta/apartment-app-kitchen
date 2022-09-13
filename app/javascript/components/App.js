@@ -21,6 +21,7 @@ class App extends Component {
       apartments: [],
   }
 }
+
  componentDidMount() {
     this.readApartment()
   }
