@@ -20,11 +20,15 @@ class Header extends Component {
     console.log("current_user:", current_user)
     return (
       <>
-        <h1>All Apartments</h1>
         <Nav>
           {logged_in &&
             <NavItem>
               <a href={sign_out_route} className="nav-link">Sign Out</a>
+            </NavItem>
+          }
+          {!logged_in &&
+            <NavItem>
+              <a href="/apartmentindex" className="nav-link">View Listings</a>
             </NavItem>
           }
           {!logged_in &&
@@ -45,11 +49,6 @@ class Header extends Component {
               <a href={`/users/${current_user.id}`} className="nav-link">My Apartments</a>
             </NavItem>
           }
-          {!logged_in &&
-            <NavItem>
-              <a href="/apartments" className="nav-link">All Apartments</a>
-            </NavItem>
-          }
           {logged_in &&
             <NavItem>
               <a href="/apartmentnew" className="nav-link">Add Apartment</a>
@@ -63,16 +62,7 @@ class Header extends Component {
               <a href={`/users/${current_user.id}`} className="nav-link">My Apartments</a>
             </NavItem>
           }
-          {!logged_in &&
-            <NavItem>
-              <a href="/" className="nav-link">Home</a>
-            </NavItem>
-          }
-          {logged_in &&
-            <NavItem>
-              <a href="/" className="nav-link">Home</a>
-            </NavItem>
-          }
+          
         </Nav>
       </>
     )

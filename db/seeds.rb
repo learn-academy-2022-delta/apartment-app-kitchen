@@ -14,7 +14,7 @@ apartments1 = [
     bedrooms: 4,
     bathrooms: 2,
     pets: 'Cats Ok',
-    image: 'image.png'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5tMXO2OQLFSpSzCTHX3DxuskRQbt9stfiZg&usqp=CAU'
   },
   {
     street: '456 Table Rd',
@@ -26,7 +26,7 @@ apartments1 = [
     bedrooms: 2,
     bathrooms: 1,
     pets: 'None',
-    image: 'image.png'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsqeYDVfMQcEvw3vKrvjg-KdmNr3N4DJzrxg&usqp=CAU'
   }
 ]
   
@@ -41,7 +41,7 @@ apartments2 = [
     bedrooms: 3,
     bathrooms: 2,
     pets: 'Dogs Ok',
-    image: 'image.png'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyyKHKw86NRann0F4PgV-ZzdH-RhvND7LWpQ&usqp=CAU'
   }
 ]
 
