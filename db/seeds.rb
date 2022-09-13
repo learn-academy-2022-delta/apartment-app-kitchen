@@ -25,7 +25,7 @@ apartments1 = [
     price: '$2500',
     bedrooms: 2,
     bathrooms: 1,
-    pets: 'None',
+    pets: 'Not Allowed',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsqeYDVfMQcEvw3vKrvjg-KdmNr3N4DJzrxg&usqp=CAU'
   }
 ]

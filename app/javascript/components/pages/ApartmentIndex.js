@@ -26,6 +26,7 @@ export default class ApartmentIndex extends Component {
                         {apartment.street} {apartment.city}, {apartment.state}
                         <br/>
                         {apartment.bedrooms} bedrooms, {apartment.bathrooms} bath
+                        <hr></hr>
                       </CardText>
                     </CardBody>
                       <Button color='none'>

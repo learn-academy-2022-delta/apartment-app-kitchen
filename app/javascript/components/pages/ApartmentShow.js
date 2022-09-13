@@ -46,7 +46,7 @@ class ApartmentShow extends Component {
                     <p>Email:{ apartment?.email }</p>
                   </div>
                 <NavLink
-                  to={"/index"}
+                  to={"/apartmentindex"}
                 >
                 <Button className="return-button">
                   Return Browsing All Apartments

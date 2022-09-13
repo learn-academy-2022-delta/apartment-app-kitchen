@@ -44,7 +44,8 @@ class App extends Component {
     .then(() => this.readApartment())
     .catch(errors => console.log("New Apartment Error", errors))
   }
-    updateApartment = (editapartment, id) => {
+  
+  updateApartment = (editapartment, id) => {
       fetch(`/apartments/${id}`, {
         body: JSON.stringify(editapartment),
         method: 'PUT',
